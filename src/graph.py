@@ -39,3 +39,19 @@ def plot_graph(graph):
     # построение графа, pos - позиции вершин графа, width - ширина ребра
     nx.draw_networkx(graph, pos, width=1, with_labels=True)
     plt.show()
+
+
+def get_graph_from_clasterisation(clasterisation):
+    G = nx.Graph()
+
+    for c in np.unique(clasterisation):
+        nodes_in_class = np.where(clasterisation == c)[0]
+        G.add_nodes_from(nodes_in_class)
+
+    for c in np.unique(clasterisation):
+        nodes_in_class = np.where(clasterisation == c)[0]
+        edges = [(nodes_in_class[i], nodes_in_class[j]) for i in range(len(nodes_in_class))
+                 for j in range(i + 1, len(nodes_in_class))]
+        G.add_edges_from(edges)
+
+    return G
