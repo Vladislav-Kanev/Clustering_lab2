@@ -1,3 +1,4 @@
 venv
+venv_3.11
 data/*.Identifier
 __pycache__
