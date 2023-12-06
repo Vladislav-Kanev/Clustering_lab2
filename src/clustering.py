@@ -18,7 +18,7 @@ def hierarchical_clustering(data, distance_matrix, clusters=2, method='single'):
     """
 
     clusters = AgglomerativeClustering(
-        n_clusters=clusters, linkage='single', connectivity=distance_matrix).fit_predict(data)
+        n_clusters=clusters, linkage=method, connectivity=distance_matrix).fit_predict(data)
 
     return clusters
 
