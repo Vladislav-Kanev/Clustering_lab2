@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 from scipy.spatial.distance import chebyshev, euclidean, cityblock, cosine
 
@@ -36,4 +37,4 @@ def cosine_distances(data: pd.DataFrame):
 
 
 def convert_distance_to_similarity(distance_matrix: pd.DataFrame) -> pd.DataFrame:
-    return 1 / (1 + distance_matrix)
+    return pd.DataFrame(np.exp(-distance_matrix.values.astype(float)**2))
