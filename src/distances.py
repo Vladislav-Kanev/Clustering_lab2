@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from scipy.spatial.distance import chebyshev, euclidean, cityblock, cosine
+from scipy.spatial.distance import chebyshev, euclidean, cosine
 
 
 def chebyshev_distances(data: pd.DataFrame):
