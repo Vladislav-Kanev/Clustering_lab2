@@ -37,7 +37,7 @@ def _get_sets_of_classes(clusterization):
     return partition
 
 
-def calculate_modularity(singularity_graphs, clusterizations, default_distance='cosine'):
+def calculate_modularity(singularity_graphs, clusterizations, default_distance='euclidean'):
     processed_clast = dict()
 
     for i in clusterizations:
