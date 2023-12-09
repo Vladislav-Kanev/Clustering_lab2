@@ -36,5 +36,5 @@ def cosine_distances(data: pd.DataFrame):
     return distances
 
 
-def convert_distance_to_similarity(distance_matrix: pd.DataFrame) -> pd.DataFrame:
-    return pd.DataFrame(np.exp(-distance_matrix.values.astype(float)**2))
+def convert_distance_to_similarity(distance_matrix: pd.DataFrame, sigma:float) -> pd.DataFrame:
+    return pd.DataFrame(np.exp(-(distance_matrix.values.astype(float))**2/(2*sigma**2)))
